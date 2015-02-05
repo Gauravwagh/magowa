@@ -1,0 +1,171 @@
+<div class="wowmain">
+<div class="row page-header" style="border-bottom: 2px solid black;">
+	
+	<div class="col-md-10 ">
+		<h3 align="center">Magowa Tours and Travels Prv. Ltd.</h3>
+	</div>
+</div>
+<div class="row " style="border-bottom: 1px solid black; padding-left:5%;">
+	<p>
+		<strong>Registered Office: </strong>3/35, Chaturdham Housing Society, Navi Peth, Lokmanya Nagar, LBS Road, Pune – 411 030. <br/>
+		<strong>Phone No: </strong>020-24250490.<span class="pull-right"><strong>Mobile No: </strong>+918605077000.</span>
+		<br>
+		
+		<strong>Email: </strong>magowaenterprises@gmail.com <span class="pull-right"><strong>Website: </strong>www.magowa.com</span>
+	</p>
+</div>
+<div >
+	<p><strong>Invoice No. :- </strong>{{invoice.invoice_no}} <span class="pull-right"><strong>Date:- </strong>{{invoice.date|date:"M d, Y"}}</span></p>
+	<p><strong>Name M/Ms. :- </strong>{{invoice.name}}</p>
+	<p><strong>Pax Name :- </strong>{{invoice.pax_name}}</p>
+	<p><strong>Address :- </strong>{{invoice.address}}</p>
+	<p><strong>Bookd By :- </strong>{{invoice.booked_by}}</p>
+	<p><strong>Vehicle Type:- </strong>{{invoice.vehical_type}} <span class="pull-right"><strong>Vehicle No:- </strong>{{invoice.vehical_no}}</span></p>
+	<p><strong>Journy :- </strong>{{invoice.journy}}</p>
+	<p><strong>Journy Period :- </strong>{{invoice.trip_starting_date|date:"M d, Y"}} to {{invoice.trip_closing_date|date:"M d, Y"}} 
+		<span class="pull-right"><strong>Chaffuer :- </strong>{{invoice.chaffeur}}</span>
+	</p>
+	<div>
+		<table class="table " border="1">
+			<tr>
+				<th>Usage</th>
+				<th></th>
+			</tr>
+			<tr>
+			<td>
+			<table class="table inside_table" >
+					<tr>
+						<td ><strong>Closing</strong></td>
+						<td>{{invoice.ending_kilometer}} Kms.</td>
+						<td><strong>Date</strong></td>
+						<td>{{invoice.trip_closing_date|date:"M d, Y"}}</td>
+					</tr>
+					<tr>
+						<td><strong>Starting</strong></td>
+						<td>{{invoice.starting_kilometer}} Kms.</td>
+						<td><strong>Date</strong></td>
+						<td>{{invoice.trip_starting_date|date:"M d, Y"}}</td>
+					</tr>
+					<tr>
+						<td><strong>Total</strong></td>
+						<td>{{invoice.total_kilometer}} Kms.</td>
+						<td><strong>Days</strong></td>
+						<td>{{invoice.total_trip_days}}</td>
+					</tr>
+			</table>
+			</td>
+			<td></td>
+			</tr>
+			<tr >
+				
+				<td style="background-color:lightblue;" colspan="1">Outstation tarrifs</td>
+				<td style="text-align:right;font-weight:bold;background-color:lightblue;">Amount in (rs):</td>
+			</tr>
+			<tr>
+				<td>
+					<table class="table inside_table" >
+					<tr>
+						<td ><strong>Rate/Day</strong></td>
+						<td>{{invoice.pure_amount}} Rs.</td>
+						<td><strong>No of days</strong></td>
+						<td>{{invoice.total_trip_days}}</td>
+					</tr>
+					<tr>
+						<td><strong>Extra Kms</strong></td>
+						<td>{{invoice.extra_kilometers}} Kms.</td>
+						<td><strong>Per Kms</strong></td>
+						<td>{{invoice.per_kilometer_charge}} Rs.</td>
+					</tr>
+					<tr>
+						<td><strong>Driver Allownce Rs</strong></td>
+						<td>{{invoice.driver_allownce_charge}} Rs.</td>
+						<td><strong>No of Days</strong></td>
+						<td>{{invoice.total_trip_days}}</td>
+					</tr>
+					<tr>
+						<td><strong>Night Hault Chargs Rs.</strong></td>
+						<td>{{invoice.night_hault_charge}} Rs.</td>
+						<td><strong>No Of days</strong></td>
+						<td>{{invoice.total_trip_days}}</td>
+					</tr>
+			</table>
+				</td>
+				<td style="width:20%;">
+					<table>
+						<tr><td></td><td style="text-align:right;"><strong>{{invoice.pure_amount}} Rs.</strong></td></tr>
+						<tr><td></td><td style="text-align:right;"><strong>{{invoice.extra_charge}} Rs.</strong></td></tr>
+						<tr><td></td><td style="text-align:right;"><strong>{{invoice.driver_allownce_charge}} Rs.</strong></td></tr>
+						<tr><td></td><td style="text-align:right;"><strong>{{invoice.night_hault_charge}} Rs.</strong></td></tr>
+					</table>
+					<!-- <h6 style="line-space:0px;">{{invoice.pure_amount}} Rs.</h6>
+					<h6 style="line-space:0px;">{{invoice.extra_charge}} Rs.</h6>
+					<h6 style="line-space:0px;">{{invoice.driver_allownce_charge}} Rs.</h6>
+					<h6 style="line-space:0px;">{{invoice.night_hault_charge}} Rs.</h6> -->
+
+				</td>
+
+			</tr>
+			<tr >
+				<td style="background-color:lightblue; text-align:right;"><strong>Total Amount</strong></td>
+				<td class="totl_amount" style="text-align:right;background-color:lightblue;font-weight:bold;">6000 Rs.</td>
+			</tr>
+			<tr>
+				<td>Service Tax (AAVPW6426HSD002) [4.944%]</td>
+				<td style="text-align:right;">{{invoice.service_tax}} Rs.</td>
+			</tr>
+			
+			<tr>
+				<td>Toll & Parking</td>
+				<td style="text-align:right;">{{invoice.toll_and_parking}} Rs.</td>
+			</tr>
+			
+			<tr>
+				<td style="text-align:right;"><strong>Grand Total</strong></td>
+				<td style="text-align:right;">{{invoice.grand_total}} Rs.</td>
+			</tr>
+			<tr>
+				<td style="text-align:right;"><strong>(-) Less Advance</strong></td>
+				<td style="text-align:right;">{{invoice.less_adavance}} Rs.</td>
+			</tr>
+			<tr>
+				<td style="text-align:right;"><strong>Amount Payable Now</strong></td>
+				<td style="text-align:right;">{{invoice.amount_payeble_now}} Rs.</td>
+			</tr>
+		</table>
+		<p>TERMS & CONDITIONS:-</p>
+		<ol>
+			<li>Payment should be made within 7 days from the date of submission of Invoice and in case of any discrepancy, it should be reported before that, else it will be assumed that invoice is accepted.</li>
+			<li>Per Calendar day minimum 300 kms charges are applicable.</li>
+			<li>For all overdues, interest will be charged @ 24% per annum.</li>
+			<li>Vehicles are insured against accident of damage caused.</li>
+			<li>Insurance of passengers is not insured in the quoted rates.</li>
+			<li>Dispute if any Subject to Pune Jurisdiction only.</li>
+		</ol>
+		<button class="btn btn-primary getbackhere"  onclick="myFunction()" style="float:right;">Print</button>
+	</div>
+	
+</div>
+</div>
+<script>
+	$( document ).ready(function() {
+    var total = {{invoice.pure_amount}} + {{invoice.extra_charge}} + {{invoice.driver_allownce_charge}} + {{invoice.night_hault_charge}}
+    $('.totl_amount').text(total+"Rs");
+
+
+});
+	function myFunction()
+			 {	
+			 	//$('.printhide').hide();
+			 	$('.getbackhere').hide();
+			 	 var divContents = $(".wowmain").html();
+            var printWindow = window.open('', '', 'height=1000,width=1200');
+            printWindow.document.write("<html><head><title>Invoice</title>");
+            printWindow.document.write('</head><body style="width:100%;height:auto;">');
+            printWindow.document.write(divContents);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            printWindow.print();
+
+		    	//window.print();
+			}
+</script>

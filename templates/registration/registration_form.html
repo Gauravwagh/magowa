@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+ <div class="container">
+       <img src="/media/img/magowa_logo.gif" style="margin-top:2%;"/>
+        <div class="row">
+            <div class="col-md-4  text-center logo-margin ">
+              
+                </div>
+              <div class="col-md-4" >
+                <div class="login-panel panel panel-default" style="background-color: black; color:white; border:1px solid black; ">                  
+                    <div class="panel-heading" style="background-color: black; color:white;border:1px solid black; border-bottom:2px solid gray">
+                        <h3 class="panel-title" align="center">Register</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form method="post" action=".">
+                            <fieldset>
+                                {% csrf_token %} 
+								  {{ form.as_p }}
+								<input class="btn btn-lg btn-success btn-block" type="submit" value="{% trans 'Submit' %}" style="background-color:#48D1CC; border:1px solid #48D1CC" />
+                                <!-- Change this to a button or input when using this as a form -->
+                            </fieldset>
+                        </form>
+						
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
