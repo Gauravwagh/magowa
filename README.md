@@ -1,0 +1,2 @@
+# magowa
+Magowa Invoice application
